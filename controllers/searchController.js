@@ -22,7 +22,7 @@ exports.fetchImages = catchAsync(async (req, res, next) => {
 
   const query = req.body.term || "dog";
 
-  client.photos.search({ query, per_page: 50 }).then((photos) => {
+  client.photos.search({ query, per_page: 150 }).then((photos) => {
     photos.photos.forEach((element) => {
       console.log(element.src);
       images.push({ url: element.src.medium, alt: element.alt });
