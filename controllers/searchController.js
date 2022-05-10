@@ -1,12 +1,9 @@
 const catchAsync = require("../utils/catchAsync");
-const Flicker = require("flickr-sdk");
 const { createClient } = require("pexels");
 
 const client = createClient(
   process.env.PexelsAPIKey
 );
-
-const flickr = Flicker(process.env.FlickerAPIKey);
 
 exports.sendSearchResult = catchAsync(async (req, res, next) => {
   res.status(200).json({
